@@ -251,6 +251,24 @@ button a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 80px;
+  background-color: #f8f8f8;
+}
+
+.produkt-konteiner p {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 17px;
+  height: 5px;
+}
+
+.product-container img {
+  display: flex;
+  width: 200px;
+  justify-content: center;
 }
 
 /* productdescription */
