@@ -15,16 +15,32 @@ async function fetchProducts() {
 
 function displayProducts(products) {
     const productContainer = document.getElementById("product-container");
-    productContainer.innerHTML = "";
+    productContainer.innerHTML = ""; // Clear any existing content
     products.forEach(product => {
-        const productElement = document.createElement("div");
-        productElement.className = "product-container";
-        productElement.innerHTML = `
-            <h2>${product.name}</h2>
-            <p>${product.description}</p>
-            <a href="product-detail.html?id=${product.id}">View Details</a>
-        `;
-        productContainer.appendChild(productElement);
+    const productElement = document.createElement("div");
+    productElement.className = "product-container";
+
+    const imageElement = document.createElement("img");
+      imageElement.src = product.image; // Assuming 'image' is the key in your product object that holds the image URL
+    imageElement.alt = product.name;
+
+    const nameElement = document.createElement("h2");
+    nameElement.textContent = product.name;
+
+    const descriptionElement = document.createElement("p");
+    descriptionElement.textContent = product.description;
+
+    const buttonElement = document.createElement("a");
+    buttonElement.href = `product-detail.html?id=${product.id}`;
+    buttonElement.textContent = "View Details";
+    buttonElement.className = "view-details-button";
+
+    productElement.appendChild(imageElement);
+    productElement.appendChild(nameElement);
+    productElement.appendChild(descriptionElement);
+    productElement.appendChild(buttonElement);
+
+    productContainer.appendChild(productElement);
     });
 }
 
