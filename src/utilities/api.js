@@ -1,11 +1,14 @@
-const url = "https://api.noroff.dev/api/v1//rainy-days";
+const url = "https://api.noroff.dev/api/v1/rainy-days";
 
 export async function makeApiCall() {
+    try {
     const response = await fetch(url);
-
-    let data = await response.json();
-
-    let data = results;
-
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
     return data;
+    } catch (error) {
+    console.error('There was a problem with the fetch operation:', error);
+    }
 }
