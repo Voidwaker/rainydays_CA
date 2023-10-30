@@ -15,13 +15,13 @@ async function fetchProducts() {
 
 function displayProducts(products) {
     const productContainer = document.getElementById("product-container");
-    productContainer.innerHTML = ""; // Clear any existing content
+    productContainer.innerHTML = "";
     products.forEach(product => {
     const productElement = document.createElement("div");
     productElement.className = "product-container";
 
     const imageElement = document.createElement("img");
-      imageElement.src = product.image; // Assuming 'image' is the key in your product object that holds the image URL
+    imageElement.src = product.image;
     imageElement.alt = product.name;
 
     const nameElement = document.createElement("h2");
