@@ -12,3 +12,6 @@ export async function makeApiCall() {
     console.error('There was a problem with the fetch operation:', error);
     }
 }
+
+
+ export const url ="https://api.noroff.dev/api/v1/rainy-days/<id>" ;

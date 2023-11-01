@@ -31,7 +31,7 @@ function displayProducts(products) {
     descriptionElement.textContent = product.description;
 
     const buttonElement = document.createElement("a");
-    buttonElement.href = `product-detail.html?id=${product.id}`;
+    buttonElement.href = `productdescription.html?id=${product.id}`;
     buttonElement.textContent = "View Details";
     buttonElement.className = "view-details-button";
 
